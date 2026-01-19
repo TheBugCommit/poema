@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Els testimonis muts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <audio id="bg-music" loop>
+        <source src="la-teva-musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="bg-container"></div>
+    <div id="bg-overlay"></div>
+
+    <div class="container d-flex flex-column justify-content-center min-vh-100 py-4">
+
+        <div id="login-row" class="row justify-content-center fade-transition" style="opacity: 1;">
+            <div class="col-11 col-md-8 col-lg-5">
+                <div class="glass-box p-5 text-center login-container mx-auto">
+                    <h2 class="mb-4 text-50 fst-italic" style="color: #aecbe8;">Xiuxiueja la clau per obrir el
+                        firmament...</h2>
+
+                    <div class="mb-4">
+                        <input type="password" id="secretInput" class="form-control stardust-input fs-4"
+                            placeholder="········">
+                    </div>
+
+                    <button class="btn btn-cosmos" onclick="attemptEntry()">Entrar</button>
+
+                    <div id="error-msg" class="mt-3 text-danger small fade-transition" style="opacity: 0;">
+                        La freqüència no és correcta.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="poem-row" class="row justify-content-center fade-transition d-none" style="opacity: 0;">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="glass-box p-4 p-md-5 text-justify">
+                    <h1 class="display-4 mb-5 fw-bold text-white">La singularitat del creuament dels camins</h1>
+
+                    <div class="poem-text text-start text-md-center px-2">
+                        <p>
+                            Potser el món girava igual que&nbsp;sempre, aliè a&nbsp;nosaltres&nbsp;dos.<br>
+                            Perduts en la foscor i&nbsp;la&nbsp;immensitat&nbsp;de<br>
+                            l’univers silenciós.<br>
+                            Un simple missatge va creuar el&nbsp;buit,<br>
+                            desafiant l’infinit,<br>
+                            com una pluja de protons trencant la&nbsp;meva&nbsp;nit.
+                        </p>
+
+                        <p>
+                            Vas arribar des del centre de&nbsp;la&nbsp;galàxia,<br>
+                            impactant més forta que&nbsp;un&nbsp;meteorit,<br>
+                            encenent un quàsar dins el&nbsp;meu&nbsp;cor: erradicant<br>
+                            la&nbsp;foscor,<br>
+                            fent que el dolor passat quedés petit.
+                        </p>
+
+                        <p>
+                            Allà dalt, en la volta fosca, alguna cosa va&nbsp;entrar<br>
+                            en&nbsp;ressonància,<br>
+                            mostrant-me el punt fix que marcaria el&nbsp;nord<br>
+                            de la meva alegria.<br>
+                            Vaig caure en el teu horitzó d'esdeveniments<br>
+                            sense&nbsp;espera,<br>
+                            atrapat per sempre en aquesta força tan<br>
+                            sincera.
+                        </p>
+
+                        <p>
+                            Mira aquestes estrelles,<br>
+                            eren els testimonis muts del&nbsp;primer<br>
+                            "hola" que va canviar la&nbsp;meva&nbsp;òrbita.<br>
+                            No sabíem encara que estàvem dibuixant un<br>
+                            mapa,<br>
+                            una ruta d'escapada cap a una vida compartida.
+                        </p>
+
+                        <p>
+                            Sense saber com, ja no érem tan sols&nbsp;dos.<br>
+                            Aquella nit, sense saber-ho, vam encendre un&nbsp;púlsar,<br>
+                            marcant el rumb dels nostres camins.
+                        </p>
+
+                        <p>
+                            I avui, mirant enrere, entenc el&nbsp;seu<br>
+                            llenguatge:<br>
+                            tot l'univers conspirava en la&nbsp;seva<br>
+                            immensitat,<br>
+                            buscant la coordenada perfecta, la geometria secreta,<br>
+                            perquè tu i&nbsp;jo iniciéssim aquest viatge.
+                        </p>
+
+                        <p>
+                            Ara que hem tancat la primera òrbita,<br>
+                            sé que aquest mapa és tan sols el&nbsp;pròleg.<br>
+                            Restant un abisme d’espai inexplorat,<br>
+                            només navegable per la gravetat d’aquest<br>
+                            sistema binari.
+                        </p>
+
+                        <p class="mb-0 fw-bold fst-italic text-white">
+                            T'estimo, des d'aquella primera llum fins&nbsp;a<br>
+                            l'última.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
