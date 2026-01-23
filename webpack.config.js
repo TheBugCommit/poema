@@ -31,6 +31,12 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html",
+      minify: {
+        collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeComments: true,
+        preserveLineBreaks: true
+      }
     }),
   ],
   devServer: {
