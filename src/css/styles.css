@@ -1,0 +1,259 @@
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Cormorant Garamond', serif;
+    color: #e0e0e0;
+}
+
+.min-vh-100 {
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+}
+
+#starfield-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: -2;
+    pointer-events: none;
+}
+
+#bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/img/fons-galaxia.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -3;
+    transform: scale(1.1);
+    animation: drift 60s ease-in-out infinite alternate;
+}
+
+#bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+#memories-stage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tap-hint {
+    position: fixed;
+    bottom: 15%;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    transition: opacity 0.8s ease;
+}
+
+.hint-content {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: hintPulse 2s infinite ease-in-out;
+}
+
+.hint-icon {
+    font-size: 1.2rem;
+}
+
+.memory-photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 85vw;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 5px solid white;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+}
+
+#supernova-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supernova-core {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #fff 20%, #aecbe8 60%, transparent 80%);
+    border-radius: 50%;
+    box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transform: scale(0);
+}
+
+.supernova-shockwave {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.supernova-flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    z-index: 1001;
+}
+
+.fade-transition {
+    transition: opacity 1.5s ease-in-out;
+}
+
+.glass-box {
+    background: rgba(20, 20, 20, 0.5);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    animation: cosmic-pulse 4s ease-in-out infinite;
+    transition: all 0.5s ease;
+}
+
+.stardust-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.stardust-input:focus {
+    background: transparent;
+    color: white;
+    border-bottom: 1px solid #aecbe8;
+    box-shadow: 0 4px 2px -2px rgba(174, 203, 232, 0.5);
+}
+
+.stardust-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+}
+
+.btn-cosmos {
+    margin-top: 30px;
+    padding: 12px 40px;
+    background: transparent;
+    color: #aecbe8;
+    border: 1px solid #aecbe8;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-cosmos:hover {
+    background: #aecbe8;
+    color: #000;
+    box-shadow: 0 0 20px rgba(174, 203, 232, 0.6);
+}
+
+
+.poem-text p {
+    font-size: clamp(1.15rem, 4vw, 1.6rem);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+@keyframes cosmic-pulse {
+    0% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(174, 203, 232, 0.1);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    50% {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 50px rgba(174, 203, 232, 0.4);
+        border-color: rgba(174, 203, 232, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(174, 203, 232, 0.1);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+}
+
+@keyframes drift {
+    0% {
+        transform: scale(1.1) translate(0, 0);
+    }
+
+    50% {
+        transform: scale(1.2) translate(-3%, -2%);
+    }
+
+    100% {
+        transform: scale(1.1) translate(0, 0);
+    }
+}
+
+@media (min-width: 768px) {
+    .poem-text p {
+        font-size: 1.6rem;
+    }
+
+    .login-container {
+        max-width: 500px;
+    }
+}
